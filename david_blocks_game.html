@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>挑戰大偉的積木王國</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      padding: 2rem;
+      background-color: #f4f4f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    h1 {
+      color: #4a90e2;
+    }
+    .question {
+      background: #fff;
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    label, input, button {
+      display: block;
+      margin-top: 0.5rem;
+    }
+    input {
+      padding: 0.5rem;
+      width: 100%;
+      max-width: 300px;
+    }
+    .feedback {
+      margin-top: 0.5rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>🧱 挑戰大偉的積木王國 🧱</h1>
+  <p>大偉用小立方體建造一座夢幻積木塔！快幫他一起解開以下幾何謎題吧！</p>
+
+  <div class="question">
+    <strong>問題 1：</strong> 第 10 層需要多少個立方體？
+    <input type="number" id="q1"><button onclick="checkAnswer(1, 19)">確認</button>
+    <div id="f1" class="feedback"></div>
+  </div>
+
+  <div class="question">
+    <strong>問題 2：</strong> 10 層總共需要多少個立方體？
+    <input type="number" id="q2"><button onclick="checkAnswer(2, 100)">確認</button>
+    <div id="f2" class="feedback"></div>
+  </div>
+
+  <div class="question">
+    <strong>問題 3：</strong> 10 層積木模型的體積是多少立方公分？
+    <input type="number" id="q3"><button onclick="checkAnswer(3, 2700)">確認</button>
+    <div id="f3" class="feedback"></div>
+  </div>
+
+  <div class="question">
+    <strong>問題 4：</strong> 10 層積木模型的表面積是多少平方公分？
+    <input type="number" id="q4"><button onclick="checkAnswer(4, 2430)">確認</button>
+    <div id="f4" class="feedback"></div>
+  </div>
+
+  <script>
+    function checkAnswer(qNum, correctAns) {
+      const input = document.getElementById('q' + qNum).value;
+      const feedback = document.getElementById('f' + qNum);
+      if (parseInt(input) === correctAns) {
+        feedback.innerHTML = "✅ 太棒了！答對了！";
+        feedback.style.color = "green";
+      } else {
+        feedback.innerHTML = "❌ 再試試看喔～";
+        feedback.style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>
